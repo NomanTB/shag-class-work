@@ -12,18 +12,26 @@ class Student:
         self.age = age       #self это заменяемый конструктор ниже показано что место self можно поставь любую переменную и получить обект
         self.country = country     #self это заменяемый конструктор ниже показано что место self можно поставь любую переменную и получить обект
 
+    def __str__(self):
+        return f'Hello i name is {self.name}. i am {self.age}. i from {self.country}'
+
     def print_date(self):
         print(f'Hello i name is {self.name}. i am {self.age}. i from {self.country}')    # сдесь мы можем подставить в место переменных функции значения
 
+    def __del__(self):
+        print(f'{self.name} is deleted')
 
 
 one = Student(name='Roma', age=20, country='Ukraine')     # СЕНЯЕМ ЗНАЧЕНИЯ ПЕРЕМЕННЫХ
 two = Student('Sara', 13, 'Safain')    #меняем значения переменных и оставляем по умолчанию
-three =Student(age = 31)
 
 print(one.name)   # выводим часть функции
 
 one.print_date()   #выводим функцию print_date с изменеными значениями
 two.print_date()   #выводим функцию print_date с изменеными значениями
-three.print_date()   #выводим функцию print_date с изменеными значениями
+
+
+
+print(one)  # выводит тоже что и сверху
+
 
